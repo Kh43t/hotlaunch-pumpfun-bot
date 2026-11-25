@@ -14,8 +14,12 @@
 //   - buying every launch loses; buying only launches with >=6 distinct buyers wins.
 //   - the creator's own buy matters: >=0.25 SOL of dev buy lifts the win rate further, but
 //     thins the coin count below the 20-coin guardrail, so it sizes nothing here.
-//   - fast exits win: TP +12% / SL -15% with a flow exit beats wider TPs, tighter stops and
-//     holding longer; adding to winners and partial take-profits both lose.
+//   - fast exits win: TP +15% / SL -15% with a 2.0 SOL flow exit beats the shipped
+//     +12% / 1.5 SOL (mean 0.4565 -> 0.6150 SOL on the dev window, 2x-fee case
+//     -0.0579 -> +0.1366); wider TPs (+18%) and tighter stops both lose, as do
+//     holding longer, adding to winners and partial take-profits.
+//   - bigger stakes win up to the size cap: 0.50 SOL beats 0.30 SOL (0.5354 vs
+//     0.4565 mean) and 0.60 SOL ties 0.50 SOL, because the 1%-of-real-SOL cap binds.
 //   - a 2-slot latency means the fill price is worse than the decision price on a rocketing
 //     coin, so buys carry a 10% slippage cap: a fill that ran away is refused, for free.
 //
